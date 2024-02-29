@@ -12,6 +12,8 @@ public class LevelParser : MonoBehaviour
     public GameObject brickPrefab;
     public GameObject questionBoxPrefab;
     public GameObject stonePrefab;
+    public GameObject waterPrefab;
+    public GameObject goalPrefab;
     
     // --------------------------------------------------------------------------
     void Start()
@@ -72,8 +74,11 @@ public class LevelParser : MonoBehaviour
                     Instantiate(stonePrefab, newPos, Quaternion.identity, environmentRoot);
                 } else if (letter == '?'){
                     Instantiate(questionBoxPrefab, newPos, Quaternion.identity, environmentRoot);
+                } else if (letter == 'w'){
+                    Instantiate(waterPrefab, newPos, Quaternion.identity, environmentRoot);
+                } else if (letter == 'g'){
+                    Instantiate(goalPrefab, newPos, Quaternion.identity, environmentRoot);
                 }
-                
             }
             row++;
         }
